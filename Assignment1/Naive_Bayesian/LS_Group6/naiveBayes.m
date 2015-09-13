@@ -1,47 +1,50 @@
 [trainData, testData, minX, maxX, minY, maxY, numOfClasses] = prepareInputData();
 
-% trainData{0}
-
 [rows, cols] = size(trainData{1});
-
 
 syms X a1 a2;
 
 multivariantPdf(1:numOfClasses) = X;
 numOfAttributes = 2 ;% d
 
-X = [a1 a2]';
+X = [a1 a2]'
 
 allTogether = [];
 means = cell(1,numOfClasses);
-covariances = cell(1,numOfClasses);
-sumCovariances = zeros(numOfAttributes,numOfAttributes);
+variances = cell(1,numOfClasses);
+sumCovariances = zeros(1,numOfAttributes)'
 
 for c = 1:numOfClasses
   allTogether = [allTogether ; trainData{c}];
   means{c} = mean(trainData{c})';
-  covariances{c} = cov(trainData{c});  %For different covariance
-  sumCovariances = sumCovariances + covariances{c};
+  variances{c} = var(trainData{c})';
+%   for a = 1:numOfAttributes
+%     variances{c} = [variances{c} var(trainData{c}(:,a))]  %For different covariance
+%   end
+  sumCovariances = sumCovariances + variances{c}
   % multivariantPdf(c) = exp(-((X-U)'*inv(SIGMA)*(X-U))/2)/(((2*pi)^(numOfAttributes/2))*(det(SIGMA)^(1/2)));
 end
 
-SIGMA = cov(allTogether);   %For all classes together
-AVGSIGMA = sumCovariances/numOfClasses; %For average covariance
-
-   
+SIGMA = var(allTogether);   %For all classes together
+AVGSIGMA = sumCovariances/numOfClasses;
+MAVG = mean(AVGSIGMA);
+AVGSIGMA = [MAVG MAVG]
 
 getLikelihood=@(x,mean,var) (1/((2*pi)*det(sqrt(var))))*exp((-0.5)*(x-mean)'*inv(var)*(x-mean));
 
 dotcolors = [0,100,0; 0,0,255; 139,0,0; 184,134,11]/255;
 colors = [152,251,152; 135,206,235; 240,128,128; 255,215,0]/255;
 
-xrange = minX-2:2.5:maxX+2;
-yrange = minY-2:2.5:maxY+2;
+xrange = minX-5:0.1:maxX+5
+yrange = minY-5:0.1:maxY+5
 
-% total = length(xrange)*length(yrange)
-% count = 0;
+%total = length(xrange)*length(yrange)
+%count = 0;
 
 regions = cell(1:numOfClasses);
+
+means
+variances
 
 for i = xrange
     for j = yrange
@@ -49,26 +52,27 @@ for i = xrange
        maxIndex = 1;
        for c = 1:numOfClasses 
 %             likelihood = subs(multivariantPdf(c),[a1, a2],[i, j]);
-            likelihood = getLikelihood([i j]', means{c}, covariances{c} );
+            likelihood = getNaiveLikelihood([i j]', means{c}, AVGSIGMA , numOfAttributes);
             if(likelihood > maxLikelihood);
                 maxLikelihood = likelihood;
                 maxIndex = c;
             end
        end
        regions{maxIndex} = [ regions{maxIndex}; [i,j] ];
-%        count = count + 1;
+%       count = count + 1;
 %        progress = (count*100)/total
     end
 end
 
 hold on;
-title('Real Data:Bayesian Classification:Different Covariance');
+title('Overlapping Data:Naive Bayes Classification:Same variances(I)');
 xlabel('Attribute 1');
 ylabel('Attribute 2');
-axis([minX-2 maxX+2 minY-2 maxY+2]);
+axis([minX-5 maxX+5 minY-5 maxY+5])
 for i = 1:numOfClasses
-    plot(regions{i}(:,1), regions{i}(:,2), '*' ,'color', colors(i,:));
+    plot(regions{i}(:,1), regions{i}(:,2), '.' ,'color', colors(i,:));
 end
+
 for i = 1:numOfClasses
     plot(testData{i}(:,1), testData{i}(:,2), 'o', 'color', dotcolors(i,:));
 end
