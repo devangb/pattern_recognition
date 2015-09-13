@@ -10,27 +10,30 @@ syms X a1 a2;
 multivariantPdf(1:numOfClasses) = X;
 numOfAttributes = 2 ;% d
 
-X = [a1 a2]';
+X = [a1 a2]'; %'
 
 allTogether = [];
 means = cell(1,numOfClasses);
 covariances = cell(1,numOfClasses);
 sumCovariances = zeros(numOfAttributes,numOfAttributes);
+rows = zeros(1,numOfClasses);
+sumRows = 0;
 
 for c = 1:numOfClasses
   allTogether = [allTogether ; trainData{c}];
   means{c} = mean(trainData{c})';
   covariances{c} = cov(trainData{c});  %For different covariance
   sumCovariances = sumCovariances + covariances{c};
-  % multivariantPdf(c) = exp(-((X-U)'*inv(SIGMA)*(X-U))/2)/(((2*pi)^(numOfAttributes/2))*(det(SIGMA)^(1/2)));
+  rows{c} = size(trainData{c} , 1);
+  sumRows = sumRows + rows{c};  %Not required
 end
+
+
 
 SIGMA = cov(allTogether);   %For all classes together
 AVGSIGMA = sumCovariances/numOfClasses; %For average covariance
 
-   
-
-getLikelihood=@(x,mean,var) (1/((2*pi)*det(sqrt(var))))*exp((-0.5)*(x-mean)'*inv(var)*(x-mean));
+getLikelihood=@(x,mean,var,prior) (1/((2*pi)*det(sqrt(var))))*exp((-0.5)*(x-mean)'*inv(var)*(x-mean))*prior;
 
 dotcolors = [0,100,0; 0,0,255; 139,0,0; 184,134,11]/255;
 colors = [152,251,152; 135,206,235; 240,128,128; 255,215,0]/255;
@@ -49,7 +52,7 @@ for i = xrange
        maxIndex = 1;
        for c = 1:numOfClasses 
 %             likelihood = subs(multivariantPdf(c),[a1, a2],[i, j]);
-            likelihood = getLikelihood([i j]', means{c}, covariances{c} );
+            likelihood = getLikelihood([i j]', means{c}, covariances{c}, rows{c});
             if(likelihood > maxLikelihood);
                 maxLikelihood = likelihood;
                 maxIndex = c;
