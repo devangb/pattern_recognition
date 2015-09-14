@@ -1,5 +1,4 @@
 function bayes(path)
-	path
 	dotcolors = [0,100,0; 0,0,255; 139,0,0; 184,134,11]/255;
 	colors = [152,251,152; 135,206,235; 240,128,128; 255,215,0]/255;
 
@@ -242,5 +241,5 @@ function bayes(path)
 	    plot(trainData{i}(:,1), trainData{i}(:,2), 's', 'color', dotcolors(i,:));
 	end
 	print(fig, strcat(path,'diff_cov'),'-dpng');
-end
+%end
 	
