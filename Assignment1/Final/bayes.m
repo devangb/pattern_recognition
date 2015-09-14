@@ -33,8 +33,8 @@ function bayes(path)
 	Xmax = maxX+2;
 	Ymin = minY-2;
 	Ymax = maxY+2;
-	Xsteps = (Xmax-Xmin)/40;
-	Ysteps = (Ymax-Ymin)/40;
+	Xsteps = (Xmax-Xmin)/400;
+	Ysteps = (Ymax-Ymin)/400;
 
 	xrange = Xmin:Xsteps:Xmax;
 	yrange = Ymin:Ysteps:Ymax;
@@ -52,7 +52,7 @@ function bayes(path)
 	       maxLikelihood = 0;
 	       maxIndex = 1;
 	       for c = 1:numOfClasses 
-	            likelihood = getLikelihood([i j]', means{c}, SIGMA)*nrows{c};
+	            likelihood = getLikelihood([i j]', means{c}, SIGMA);
 	            if(likelihood > maxLikelihood);
 	                maxLikelihood = likelihood;
 	                maxIndex = c;
@@ -73,7 +73,7 @@ function bayes(path)
 	        maxLikelihood = 0;
 	        maxIndex = 1;
 	        for k = 1:numOfClasses
-	            likelihood = getLikelihood([testData{i}(c,1) testData{i}(c,2)]', means{k}, SIGMA)*nrows{k};
+	            likelihood = getLikelihood([testData{i}(c,1) testData{i}(c,2)]', means{k}, SIGMA);
 	            if(likelihood > maxLikelihood);
 	                 maxLikelihood = likelihood;
 	                 maxIndex = k;
@@ -120,7 +120,7 @@ function bayes(path)
 	       maxLikelihood = 0;
 	       maxIndex = 1;
 	       for c = 1:numOfClasses 
-	            likelihood = getLikelihood([i j]', means{c}, AVGSIGMA)*nrows{c};
+	            likelihood = getLikelihood([i j]', means{c}, AVGSIGMA);
 	            if(likelihood > maxLikelihood);
 	                maxLikelihood = likelihood;
 	                maxIndex = c;
@@ -141,7 +141,7 @@ function bayes(path)
 	        maxLikelihood = 0;
 	        maxIndex = 1;
 	        for k = 1:numOfClasses
-	            likelihood = getLikelihood([testData{i}(c,1) testData{i}(c,2)]', means{k}, SIGMA)*nrows{k};
+	            likelihood = getLikelihood([testData{i}(c,1) testData{i}(c,2)]', means{k}, AVGSIGMA);
 	            if(likelihood > maxLikelihood);
 	                 maxLikelihood = likelihood;
 	                 maxIndex = k;
@@ -188,7 +188,7 @@ function bayes(path)
 	       maxLikelihood = 0;
 	       maxIndex = 1;
 	       for c = 1:numOfClasses 
-	            likelihood = getLikelihood([i j]', means{c}, covariances{c})*nrows{c};
+	            likelihood = getLikelihood([i j]', means{c}, covariances{c});
 	            if(likelihood > maxLikelihood);
 	                maxLikelihood = likelihood;
 	                maxIndex = c;
@@ -210,7 +210,7 @@ function bayes(path)
 	        maxLikelihood = 0;
 	        maxIndex = 1;
 	        for k = 1:numOfClasses
-	            likelihood = getLikelihood([testData{i}(c,1) testData{i}(c,2)]', means{k}, SIGMA)*nrows{k};
+	            likelihood = getLikelihood([testData{i}(c,1) testData{i}(c,2)]', means{k}, covariances{k});
 	            if(likelihood > maxLikelihood);
 	                 maxLikelihood = likelihood;
 	                 maxIndex = k;

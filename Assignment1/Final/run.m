@@ -1,11 +1,11 @@
 %pair or all
 % all = 1 and pair = 0
-bayes('bayes/ls/all/');
-bayes('bayes/ls/pair/12/');
-bayes('bayes/ls/pair/13/');
-bayes('bayes/ls/pair/23/');
-
-bayes('bayes/nls/interlock/all/');
+% bayes('bayes/ls/all/');
+% bayes('bayes/ls/pair/12/');
+% bayes('bayes/ls/pair/13/');
+% bayes('bayes/ls/pair/23/');
+% 
+% bayes('bayes/nls/interlock/all/');
 bayes('bayes/nls/ring/all/');
 bayes('bayes/nls/spiral/all/');
 
