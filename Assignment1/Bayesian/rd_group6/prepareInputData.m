@@ -1,7 +1,7 @@
 function [trainData, testData, minX, maxX, minY, maxY, numOfClasses] = prepareInputData()  
 %UNTITLED Summary of this function goes here
 %   Cell array with each index contains a class's data (attribute table)
-    [~,output] = system('ls -l| grep class | wc -l');
+    [~,output] = system('ls -l| grep Class | wc -l');
     numOfClasses = str2double(output);
     trainData = cell(1,numOfClasses);
     testData = cell(1,numOfClasses);

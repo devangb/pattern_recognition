@@ -14,6 +14,7 @@ allTogether = [];
 means = cell(1,numOfClasses);
 covariances = cell(1,numOfClasses);
 sumCovariances = zeros(numOfAttributes,numOfAttributes);
+sumRows = 0;
 
 for c = 1:numOfClasses
   allTogether = [allTogether ; trainData{c}];
@@ -21,6 +22,9 @@ for c = 1:numOfClasses
   covariances{c} = cov(trainData{c});  %For different covariance
   sumCovariances = sumCovariances + covariances{c};
   % multivariantPdf(c) = exp(-((X-U)'*inv(SIGMA)*(X-U))/2)/(((2*pi)^(numOfAttributes/2))*(det(SIGMA)^(1/2)));
+  nrows{c} = size(trainData{c} , 1);
+  testrows{c} = size(testData{c}, 1)
+  sumRows = sumRows + nrows{c};  %Not required
 end
 
 SIGMA = cov(allTogether);   %For all classes together
@@ -33,8 +37,17 @@ getLikelihood=@(x,mean,var) (1/((2*pi)*det(sqrt(var))))*exp((-0.5)*(x-mean)'*inv
 dotcolors = [0,100,0; 0,0,255; 139,0,0; 184,134,11]/255;
 colors = [152,251,152; 135,206,235; 240,128,128; 255,215,0]/255;
 
-xrange = minX-5:0.1:maxX+5;
-yrange = minY-5:0.1:maxY+5;
+Xmin = minX-2
+Xmax = maxX+2
+Ymin = minY-2
+Ymax = maxY+2
+Xsteps = (Xmax-Xmin)/400
+Ysteps = (Ymax-Ymin)/400
+
+xrange = Xmin:Xsteps:Xmax;
+yrange = Ymin:Ysteps:Ymax;
+
+FINSIGMA = SIGMA;
 
 % total = length(xrange)*length(yrange)
 % count = 0;
@@ -47,7 +60,7 @@ for i = xrange
        maxIndex = 1;
        for c = 1:numOfClasses 
 %             likelihood = subs(multivariantPdf(c),[a1, a2],[i, j]);
-            likelihood = getLikelihood([i j]', means{c}, AVGSIGMA );
+            likelihood = getLikelihood([i j]', means{c}, FINSIGMA);
             if(likelihood > maxLikelihood);
                 maxLikelihood = likelihood;
                 maxIndex = c;
@@ -59,17 +72,49 @@ for i = xrange
     end
 end
 
+totalcorrect = 0;
+totalnegative = 0;
+
+confusion = zeros(numOfClasses, numOfClasses)
+
+for i = 1:numOfClasses    
+    for c = 1:testrows{i}
+        maxLikelihood = 0;
+        maxIndex = 1;
+        for k = 1:numOfClasses
+            likelihood = getLikelihood([testData{i}(c,1) testData{i}(c,2)]', means{k}, FINSIGMA);
+            if(likelihood > maxLikelihood);
+                 maxLikelihood = likelihood;
+                 maxIndex = k;
+            end
+        end
+        confusion(i,maxIndex) = confusion(i,maxIndex) +1;
+        if(maxIndex == i)
+            totalcorrect = totalcorrect+1;
+        else
+            totalnegative = totalnegative+1;
+        end
+    end
+end
+
+confusion
+
+totalcorrect
+totalnegative
+accuracy = totalcorrect*100/(totalcorrect+totalnegative)
+
 hold on;
-title('Interlock Data:Bayesian Classification:Average Covariance');
+title('Linearly Separable Data:Bayesian Classification:Same Covariance');
 xlabel('Attribute 1');
 ylabel('Attribute 2');
-axis([minX-5 maxX+5 minY-5 maxY+5]);
+axis([Xmin Xmax Ymin Ymax]);
 for i = 1:numOfClasses
     plot(regions{i}(:,1), regions{i}(:,2), '*' ,'color', colors(i,:));
 end
 for i = 1:numOfClasses
-    plot(testData{i}(:,1), testData{i}(:,2), 'o', 'color', dotcolors(i,:));
+    plot(trainData{i}(:,1), trainData{i}(:,2), 's', 'color', dotcolors(i,:));
 end
+
 % axis([minX-5 maxX+5 minY-5 maxY+5])
 % u1 = mean(trainc1)';
 % u2 = mean(trainc2)';

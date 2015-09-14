@@ -2,7 +2,7 @@ function [train, test] = partitionInputData(classNo)
 %Prepares Input by partitioning into training and test sets
 %inputData - matrix
 %name - string of fileName
-    fileName = strcat( strcat('class', num2str(classNo)) ,'.txt');
+    fileName = strcat( strcat('Class', num2str(classNo)) ,'.txt');
     inputData = load(fileName);
     rows = size(inputData,1);
     train =  inputData(1:floor((3/4)* rows),:);
