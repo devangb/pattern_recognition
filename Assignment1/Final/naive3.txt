@@ -1,0 +1,491 @@
+run
+
+path =
+
+naivebayes/ls/all/
+
+
+confusion =
+
+   125     0     0
+     0   125     0
+     0     1   124
+
+
+totalcorrect =
+
+   374
+
+
+totalnegative =
+
+     1
+
+
+accuracy =
+
+   99.7333
+
+
+confusion =
+
+   125     0     0
+     0   125     0
+     0     1   124
+
+
+totalcorrect =
+
+   374
+
+
+totalnegative =
+
+     1
+
+
+accuracy =
+
+   99.7333
+
+
+confusion =
+
+   125     0     0
+     0   125     0
+     0     1   124
+
+
+totalcorrect =
+
+   374
+
+
+totalnegative =
+
+     1
+
+
+accuracy =
+
+   99.7333
+
+
+path =
+
+naivebayes/ls/pair/12/
+
+
+confusion =
+
+   125     0
+     0   125
+
+
+totalcorrect =
+
+   250
+
+
+totalnegative =
+
+     0
+
+
+accuracy =
+
+   100
+
+MEvent. CASE!
+MEvent. CASE!
+
+confusion =
+
+   125     0
+     0   125
+
+
+totalcorrect =
+
+   250
+
+
+totalnegative =
+
+     0
+
+
+accuracy =
+
+   100
+
+
+confusion =
+
+   125     0
+     0   125
+
+
+totalcorrect =
+
+   250
+
+
+totalnegative =
+
+     0
+
+
+accuracy =
+
+   100
+
+
+path =
+
+naivebayes/ls/pair/13/
+
+
+confusion =
+
+   123     2
+     3   122
+
+
+totalcorrect =
+
+   245
+
+
+totalnegative =
+
+     5
+
+
+accuracy =
+
+    98
+
+
+confusion =
+
+   125     0
+     0   125
+
+
+totalcorrect =
+
+   250
+
+
+totalnegative =
+
+     0
+
+
+accuracy =
+
+   100
+
+
+confusion =
+
+   125     0
+     0   125
+
+
+totalcorrect =
+
+   250
+
+
+totalnegative =
+
+     0
+
+
+accuracy =
+
+   100
+
+
+path =
+
+naivebayes/ls/pair/23/
+
+
+confusion =
+
+   125     0
+     1   124
+
+
+totalcorrect =
+
+   249
+
+
+totalnegative =
+
+     1
+
+
+accuracy =
+
+   99.6000
+
+MEvent. CASE!
+MEvent. CASE!
+
+confusion =
+
+   125     0
+     1   124
+
+
+totalcorrect =
+
+   249
+
+
+totalnegative =
+
+     1
+
+
+accuracy =
+
+   99.6000
+
+
+confusion =
+
+   125     0
+     1   124
+
+
+totalcorrect =
+
+   249
+
+
+totalnegative =
+
+     1
+
+
+accuracy =
+
+   99.6000
+
+
+path =
+
+naivebayes/nls/interlock/all/
+
+
+confusion =
+
+   112    13
+     6   119
+
+
+totalcorrect =
+
+   231
+
+
+totalnegative =
+
+    19
+
+
+accuracy =
+
+   92.4000
+
+
+confusion =
+
+   106    19
+    12   113
+
+
+totalcorrect =
+
+   219
+
+
+totalnegative =
+
+    31
+
+
+accuracy =
+
+   87.6000
+
+
+confusion =
+
+   118     7
+     3   122
+
+
+totalcorrect =
+
+   240
+
+
+totalnegative =
+
+    10
+
+
+accuracy =
+
+    96
+
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+
+path =
+
+naivebayes/nls/ring/all/
+
+
+confusion =
+
+    46    29
+   158   142
+
+
+totalcorrect =
+
+   188
+
+
+totalnegative =
+
+   187
+
+
+accuracy =
+
+   50.1333
+
+
+confusion =
+
+    47    28
+   155   145
+
+
+totalcorrect =
+
+   192
+
+
+totalnegative =
+
+   183
+
+
+accuracy =
+
+   51.2000
+
+
+confusion =
+
+    75     0
+     0   300
+
+
+totalcorrect =
+
+   375
+
+
+totalnegative =
+
+     0
+
+
+accuracy =
+
+   100
+
+
+path =
+
+naivebayes/nls/spiral/all/
+
+
+confusion =
+
+   177   149
+   149   177
+
+
+totalcorrect =
+
+   354
+
+
+totalnegative =
+
+   298
+
+
+accuracy =
+
+   54.2945
+
+
+confusion =
+
+   176   150
+   149   177
+
+
+totalcorrect =
+
+   353
+
+
+totalnegative =
+
+   299
+
+
+accuracy =
+
+   54.1411
+
+
+confusion =
+
+   177   149
+   149   177
+
+
+totalcorrect =
+
+   354
+
+
+totalnegative =
+
+   298
+
+
+accuracy =
+
+   54.2945
+
+MEvent. CASE!
+MEvent. CASE!
+diary off

@@ -1,0 +1,828 @@
+run
+
+path =
+
+naivebayes/over/all/
+
+
+confusion =
+
+   112     5     4     4
+     2   117     1     5
+     9     2   114     0
+     6    13     0   106
+
+
+totalcorrect =
+
+   449
+
+
+totalnegative =
+
+    51
+
+
+accuracy =
+
+   89.8000
+
+
+confusion =
+
+   111     6     4     4
+     2   117     1     5
+    13     0   112     0
+     5    15     0   105
+
+
+totalcorrect =
+
+   445
+
+
+totalnegative =
+
+    55
+
+
+accuracy =
+
+    89
+
+
+confusion =
+
+   110     6     5     4
+     2   115     1     7
+    11     0   114     0
+     5    14     0   106
+
+
+totalcorrect =
+
+   445
+
+
+totalnegative =
+
+    55
+
+
+accuracy =
+
+    89
+
+
+path =
+
+naivebayes/over/pair/13/
+
+
+confusion =
+
+   119     6
+    17   108
+
+
+totalcorrect =
+
+   227
+
+
+totalnegative =
+
+    23
+
+
+accuracy =
+
+   90.8000
+
+{Error using <a href="matlab:helpUtils.errorDocCallback('restoreui', '/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/private/restoreui.m', 21)" style="font-weight:bold">restoreui</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/private/restoreui.m',21,0)">line 21</a>)
+Need a handle to a Figure object.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('restorehg', '/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/private/restorehg.m', 84)" style="font-weight:bold">restorehg</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/private/restorehg.m',84,0)">line 84</a>)
+    pj = restoreui( pj, h );
+
+Error in <a href="matlab:helpUtils.errorDocCallback('restore', '/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/private/restore.m', 32)" style="font-weight:bold">restore</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/private/restore.m',32,0)">line 32</a>)
+        pj = restorehg( pj, h );
+
+Error in <a href="matlab:helpUtils.errorDocCallback('print>LocalPrint', '/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/print.m', 287)" style="font-weight:bold">print>LocalPrint</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/print.m',287,0)">line 287</a>)
+        pj = restore( pj, h );
+
+Error in <a href="matlab:helpUtils.errorDocCallback('print', '/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/print.m', 233)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2014a/toolbox/matlab/graphics/print.m',233,0)">line 233</a>)
+    LocalPrint(pj);
+
+Error in <a href="matlab:helpUtils.errorDocCallback('naivebayes', '/home/devang/academic/sem7/PR/pattern_recognition/Assignment1/Final/naivebayes.m', 109)" style="font-weight:bold">naivebayes</a> (<a href="matlab: opentoline('/home/devang/academic/sem7/PR/pattern_recognition/Assignment1/Final/naivebayes.m',109,0)">line 109</a>)
+	print(fig, strcat(path,'all_cov'),'-dpng');
+
+Error in <a href="matlab:helpUtils.errorDocCallback('run', '/home/devang/academic/sem7/PR/pattern_recognition/Assignment1/Final/run.m', 35)" style="font-weight:bold">run</a> (<a href="matlab: opentoline('/home/devang/academic/sem7/PR/pattern_recognition/Assignment1/Final/run.m',35,0)">line 35</a>)
+naivebayes('naivebayes/over/pair/13/');
+} 
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+clear
+run
+
+path =
+
+naivebayes/over/pair/12/
+
+
+confusion =
+
+   118     7
+     3   122
+
+
+totalcorrect =
+
+   240
+
+
+totalnegative =
+
+    10
+
+
+accuracy =
+
+    96
+
+
+confusion =
+
+   117     8
+     2   123
+
+
+totalcorrect =
+
+   240
+
+
+totalnegative =
+
+    10
+
+
+accuracy =
+
+    96
+
+
+confusion =
+
+   117     8
+     3   122
+
+
+totalcorrect =
+
+   239
+
+
+totalnegative =
+
+    11
+
+
+accuracy =
+
+   95.6000
+
+
+path =
+
+naivebayes/over/pair/13/
+
+
+confusion =
+
+   119     6
+    17   108
+
+
+totalcorrect =
+
+   227
+
+
+totalnegative =
+
+    23
+
+
+accuracy =
+
+   90.8000
+
+
+confusion =
+
+   121     4
+    13   112
+
+
+totalcorrect =
+
+   233
+
+
+totalnegative =
+
+    17
+
+
+accuracy =
+
+   93.2000
+
+
+confusion =
+
+   120     5
+    11   114
+
+
+totalcorrect =
+
+   234
+
+
+totalnegative =
+
+    16
+
+
+accuracy =
+
+   93.6000
+
+
+path =
+
+naivebayes/over/pair/14/
+
+
+confusion =
+
+   119     6
+    19   106
+
+
+totalcorrect =
+
+   225
+
+
+totalnegative =
+
+    25
+
+
+accuracy =
+
+    90
+
+
+confusion =
+
+   120     5
+     5   120
+
+
+totalcorrect =
+
+   240
+
+
+totalnegative =
+
+    10
+
+
+accuracy =
+
+    96
+
+
+confusion =
+
+   120     5
+     5   120
+
+
+totalcorrect =
+
+   240
+
+
+totalnegative =
+
+    10
+
+
+accuracy =
+
+    96
+
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+
+path =
+
+naivebayes/over/pair/23/
+
+
+confusion =
+
+   121     4
+    12   113
+
+
+totalcorrect =
+
+   234
+
+
+totalnegative =
+
+    16
+
+
+accuracy =
+
+   93.6000
+
+
+confusion =
+
+   124     1
+     5   120
+
+
+totalcorrect =
+
+   244
+
+
+totalnegative =
+
+     6
+
+
+accuracy =
+
+   97.6000
+
+
+confusion =
+
+   124     1
+     1   124
+
+
+totalcorrect =
+
+   248
+
+
+totalnegative =
+
+     2
+
+
+accuracy =
+
+   99.2000
+
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+MEvent. CASE!
+
+path =
+
+naivebayes/over/pair/24/
+
+
+confusion =
+
+   118     7
+    20   105
+
+
+totalcorrect =
+
+   223
+
+
+totalnegative =
+
+    27
+
+
+accuracy =
+
+   89.2000
+
+
+confusion =
+
+   120     5
+    19   106
+
+
+totalcorrect =
+
+   226
+
+
+totalnegative =
+
+    24
+
+
+accuracy =
+
+   90.4000
+
+
+confusion =
+
+   118     7
+    16   109
+
+
+totalcorrect =
+
+   227
+
+
+totalnegative =
+
+    23
+
+
+accuracy =
+
+   90.8000
+
+
+path =
+
+naivebayes/over/pair/34/
+
+
+confusion =
+
+   124     1
+     0   125
+
+
+totalcorrect =
+
+   249
+
+
+totalnegative =
+
+     1
+
+
+accuracy =
+
+   99.6000
+
+
+confusion =
+
+   125     0
+     0   125
+
+
+totalcorrect =
+
+   250
+
+
+totalnegative =
+
+     0
+
+
+accuracy =
+
+   100
+
+
+confusion =
+
+   124     1
+     0   125
+
+
+totalcorrect =
+
+   249
+
+
+totalnegative =
+
+     1
+
+
+accuracy =
+
+   99.6000
+
+
+path =
+
+naivebayes/real/all/
+
+
+confusion =
+
+   512     5    24
+    43   400   171
+     7    40   575
+
+
+totalcorrect =
+
+        1487
+
+
+totalnegative =
+
+   290
+
+
+accuracy =
+
+   83.6804
+
+
+confusion =
+
+   512     5    24
+    44   398   172
+     7    43   572
+
+
+totalcorrect =
+
+        1482
+
+
+totalnegative =
+
+   295
+
+
+accuracy =
+
+   83.3990
+
+
+confusion =
+
+   510    16    15
+    19   410   185
+     7    69   546
+
+
+totalcorrect =
+
+        1466
+
+
+totalnegative =
+
+   311
+
+
+accuracy =
+
+   82.4986
+
+
+path =
+
+naivebayes/real/pair/12/
+
+
+confusion =
+
+   512    29
+    39   575
+
+
+totalcorrect =
+
+        1087
+
+
+totalnegative =
+
+    68
+
+
+accuracy =
+
+   94.1126
+
+
+confusion =
+
+   512    29
+    44   570
+
+
+totalcorrect =
+
+        1082
+
+
+totalnegative =
+
+    73
+
+
+accuracy =
+
+   93.6797
+
+
+confusion =
+
+   510    31
+    19   595
+
+
+totalcorrect =
+
+        1105
+
+
+totalnegative =
+
+    50
+
+
+accuracy =
+
+   95.6710
+
+
+path =
+
+naivebayes/real/pair/13/
+
+
+confusion =
+
+   513    28
+     9   613
+
+
+totalcorrect =
+
+        1126
+
+
+totalnegative =
+
+    37
+
+
+accuracy =
+
+   96.8186
+
+
+confusion =
+
+   514    27
+     9   613
+
+
+totalcorrect =
+
+        1127
+
+
+totalnegative =
+
+    36
+
+
+accuracy =
+
+   96.9046
+
+
+confusion =
+
+   514    27
+     9   613
+
+
+totalcorrect =
+
+        1127
+
+
+totalnegative =
+
+    36
+
+
+accuracy =
+
+   96.9046
+
+
+path =
+
+naivebayes/real/pair/23/
+
+
+confusion =
+
+   442   172
+    46   576
+
+
+totalcorrect =
+
+        1018
+
+
+totalnegative =
+
+   218
+
+
+accuracy =
+
+   82.3625
+
+
+confusion =
+
+   442   172
+    50   572
+
+
+totalcorrect =
+
+        1014
+
+
+totalnegative =
+
+   222
+
+
+accuracy =
+
+   82.0388
+
+
+confusion =
+
+   429   185
+    76   546
+
+
+totalcorrect =
+
+   975
+
+
+totalnegative =
+
+   261
+
+
+accuracy =
+
+   78.8835
+
+diary off
