@@ -3,9 +3,9 @@ function [trainData, testData, minX, maxX, minY, maxY, numOfClasses] = prepareIn
 %   Cell array with each index contains a class's data (attribute table)
     
     
-    command = ['ls',' ',path,' -l| grep Class | wc -l']
-    [~,output] = system(command)
-    numOfClasses = str2double(output)
+    command = ['ls',' ',path,' -l| grep Class | wc -l'];
+    [~,output] = system(command);
+    numOfClasses = str2double(output);
     trainData = cell(1,numOfClasses);
     testData = cell(1,numOfClasses);
     
@@ -13,10 +13,10 @@ function [trainData, testData, minX, maxX, minY, maxY, numOfClasses] = prepareIn
     maxY = 0;
     minX = 0;
     minY = 0;
-    dirpath = (strcat(path,'*.txt'))
-    Files=dir(dirpath)
-    system('mkdir Training');
-    system('mkdir Testing');
+    dirpath = (strcat(path,'*.txt'));
+    Files=dir(dirpath);
+   % system('mkdir Training');
+   % system('mkdir Testing');;
         
     for i=1:length(Files)
         fileName=Files(i).name;
