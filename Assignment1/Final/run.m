@@ -7,7 +7,7 @@
 % 
 % bayes('bayes/nls/interlock/all/');
 % bayes('bayes/nls/ring/all/');
-% bayes('bayes/nls/spiral/all/');
+bayes('bayes/nls/spiral/all/');
 % 
 % bayes('bayes/over/all/');
 % bayes('bayes/over/pair/12/');
@@ -22,14 +22,14 @@
 % bayes('bayes/real/pair/13/');
 % bayes('bayes/real/pair/23/');
 
-naivebayes('naivebayes/ls/all/');
-naivebayes('naivebayes/ls/pair/12/');
-naivebayes('naivebayes/ls/pair/13/');
-naivebayes('naivebayes/ls/pair/23/');
-
-naivebayes('naivebayes/nls/interlock/all/');
-naivebayes('naivebayes/nls/ring/all/');
-naivebayes('naivebayes/nls/spiral/all/');
+% naivebayes('naivebayes/ls/all/');
+% naivebayes('naivebayes/ls/pair/12/');
+% naivebayes('naivebayes/ls/pair/13/');
+% naivebayes('naivebayes/ls/pair/23/');
+% 
+% naivebayes('naivebayes/nls/interlock/all/');
+% naivebayes('naivebayes/nls/ring/all/');
+% naivebayes('naivebayes/nls/spiral/all/');
 
 % naivebayes('naivebayes/over/all/');
 % naivebayes('naivebayes/over/pair/12/');
